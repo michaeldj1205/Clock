@@ -153,7 +153,7 @@ button#toggle-dark-mode:hover {
 
 /* Banner Logo Styles */
 #banner-logo img {
-  width: 100%;  /* Makes the logo span the entire width of its container */
+  width: 50%;  /* Makes the logo span the entire width of its container */
   height: auto;  /* Ensures the aspect ratio is maintained */
   display: block;
   border-radius: 10px;  /* Optional: Rounded corners */
