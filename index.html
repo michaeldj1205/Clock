@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Time Zones: Manila, Mountain, and Eastern</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container text-center my-5">
+    <h1 class="display-4 mb-4 fw-bold text-gradient">Current Time</h1>
+    <div class="row justify-content-center">
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-lg elegant-card" id="manila-card">
+          <div class="card-body loading" id="manila-card-body">
+            <h2 class="card-title fw-medium">Manila, Philippines (PHT)</h2>
+            <div id="manila-time" class="display-6 time-text">Loading...</div>
+            <p id="manila-date" class="time-text">Loading...</p>
+            <p id="manila-zone" class="time-zone">+8 GMT</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-lg elegant-card" id="mountain-card">
+          <div class="card-body loading" id="mountain-card-body">
+            <h2 class="card-title fw-medium">Mountain Time (MT)</h2>
+            <div id="mountain-time" class="display-6 time-text">Loading...</div>
+            <p id="mountain-date" class="time-text">Loading...</p>
+            <p id="mountain-zone" class="time-zone">-7 GMT</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 mb-4">
+        <div class="card shadow-lg elegant-card" id="eastern-card">
+          <div class="card-body loading" id="eastern-card-body">
+            <h2 class="card-title fw-medium">Eastern Time (ET)</h2>
+            <div id="eastern-time" class="display-6 time-text">Loading...</div>
+            <p id="eastern-date" class="time-text">Loading...</p>
+            <p id="eastern-zone" class="time-zone">-5 GMT</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Control Buttons -->
+    <div class="d-flex justify-content-center mt-4">
+      <button class="btn btn-dark mx-2" id="toggle-dark-mode">Toggle Dark Mode</button>
+      <button class="btn btn-primary mx-2" id="refresh-time">Refresh Time</button>
+      <button class="btn btn-success mx-2" id="fullscreen">Fullscreen</button>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
