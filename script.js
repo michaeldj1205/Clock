@@ -14,7 +14,8 @@ function updateTime() {
   document.getElementById('manila-zone').textContent = '+8 GMT';
 
   // Mountain Time (MT) is UTC-6 or UTC-7 depending on Daylight Saving Time
-  const isDSTMountain = now.toLocaleTimeString('en-US', { timeZone: 'America/Denver', hour12: false }).includes('24');
+  const mountainDateTime = new Date().toLocaleString('en-US', { timeZone: 'America/Denver' });
+  const isDSTMountain = new Date(mountainDateTime).getHours() !== new Date().getHours();
   const mountainOffset = isDSTMountain ? -6 : -7;
   const mountainTime = new Date(utcTime + (mountainOffset * 3600000));
   document.getElementById('mountain-time').textContent = mountainTime.toLocaleTimeString();
@@ -22,7 +23,8 @@ function updateTime() {
   document.getElementById('mountain-zone').textContent = (mountainOffset === -6) ? '-6 GMT' : '-7 GMT';
 
   // Eastern Time (ET) is UTC-5 or UTC-4 depending on Daylight Saving Time
-  const isDSTEastern = now.toLocaleTimeString('en-US', { timeZone: 'America/New_York', hour12: false }).includes('24');
+  const easternDateTime = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
+  const isDSTEastern = new Date(easternDateTime).getHours() !== new Date().getHours();
   const easternOffset = isDSTEastern ? -4 : -5;
   const easternTime = new Date(utcTime + (easternOffset * 3600000));
   document.getElementById('eastern-time').textContent = easternTime.toLocaleTimeString();
