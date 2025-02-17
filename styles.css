@@ -152,15 +152,25 @@ button#toggle-dark-mode:hover {
 }
 
 /* Banner Logo Styles */
+#banner-logo {
+  display: flex;               /* Use flexbox to center content */
+  justify-content: center;     /* Horizontally center the logo */
+  align-items: center;         /* Vertically center the logo */
+  height: 150px;               /* Adjust this height if you want a taller or shorter banner */
+  margin-bottom: 2rem;
+}
+
 #banner-logo img {
-  width: 50%;  /* Makes the logo span the entire width of its container */
-  height: auto;  /* Ensures the aspect ratio is maintained */
-  display: block;
-  border-radius: 10px;  /* Optional: Rounded corners */
+  width: 50%;                  /* Logo takes up 50% of the container's width */
+  height: auto;                /* Maintain aspect ratio */
+  max-width: 100%;             /* Prevent the logo from exceeding container's width */
+  display: block;              /* Makes the image block-level */
 }
 
 /* Optional: Add a hover effect for banner logo */
 #banner-logo img:hover {
-  opacity: 0.8;  /* Slight fade effect when hovering */
+  opacity: 0.8;                /* Slight fade effect when hovering */
   transition: opacity 0.3s ease-in-out;
+}
+transition: opacity 0.3s ease-in-out;
 }
