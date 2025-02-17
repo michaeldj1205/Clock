@@ -7,11 +7,15 @@ function updateTime() {
   const now = new Date();
   const utcTime = now.getTime() + (now.getTimezoneOffset() * 60000);
 
+  // Weekday array
+  const weekdays = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+
   // Manila Time (PHT) is UTC+8
   const manilaTime = new Date(utcTime + (8 * 3600000));
   document.getElementById('manila-time').textContent = manilaTime.toLocaleTimeString();
   document.getElementById('manila-date').textContent = manilaTime.toLocaleDateString();
   document.getElementById('manila-zone').textContent = '+8 GMT';
+  document.getElementById('manila-weekday').textContent = weekdays[manilaTime.getDay()]; // Display weekday
 
   // Mountain Time (MT) is UTC-6 or UTC-7 depending on Daylight Saving Time
   const mountainDateTime = new Date().toLocaleString('en-US', { timeZone: 'America/Denver' });
@@ -21,6 +25,7 @@ function updateTime() {
   document.getElementById('mountain-time').textContent = mountainTime.toLocaleTimeString();
   document.getElementById('mountain-date').textContent = mountainTime.toLocaleDateString();
   document.getElementById('mountain-zone').textContent = (mountainOffset === -6) ? '-6 GMT' : '-7 GMT';
+  document.getElementById('mountain-weekday').textContent = weekdays[mountainTime.getDay()]; // Display weekday
 
   // Eastern Time (ET) is UTC-5 or UTC-4 depending on Daylight Saving Time
   const easternDateTime = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
@@ -30,6 +35,7 @@ function updateTime() {
   document.getElementById('eastern-time').textContent = easternTime.toLocaleTimeString();
   document.getElementById('eastern-date').textContent = easternTime.toLocaleDateString();
   document.getElementById('eastern-zone').textContent = (easternOffset === -4) ? '-4 GMT' : '-5 GMT';
+  document.getElementById('eastern-weekday').textContent = weekdays[easternTime.getDay()]; // Display weekday
 
   // Hide loading spinner after time is fetched
   document.getElementById('manila-card-body').classList.remove('loading');
