@@ -15,7 +15,7 @@ function updateTime() {
   document.getElementById('manila-time').textContent = manilaTime.toLocaleTimeString();
   document.getElementById('manila-date').textContent = manilaTime.toLocaleDateString();
   document.getElementById('manila-zone').textContent = '+8 GMT';
-  document.getElementById('manila-weekday').textContent = weekdays[manilaTime.getDay()]; // Display weekday
+  document.getElementById('manila-weekday').textContent = weekdays[manilaTime.getDay()]; // Weekday for Manila
 
   // Mountain Time (MT) is UTC-6 or UTC-7 depending on Daylight Saving Time
   const mountainDateTime = new Date().toLocaleString('en-US', { timeZone: 'America/Denver' });
@@ -25,7 +25,7 @@ function updateTime() {
   document.getElementById('mountain-time').textContent = mountainTime.toLocaleTimeString();
   document.getElementById('mountain-date').textContent = mountainTime.toLocaleDateString();
   document.getElementById('mountain-zone').textContent = (mountainOffset === -6) ? '-6 GMT' : '-7 GMT';
-  document.getElementById('mountain-weekday').textContent = weekdays[mountainTime.getDay()]; // Display weekday
+  document.getElementById('mountain-weekday').textContent = weekdays[mountainTime.getDay()]; // Weekday for Mountain
 
   // Eastern Time (ET) is UTC-5 or UTC-4 depending on Daylight Saving Time
   const easternDateTime = new Date().toLocaleString('en-US', { timeZone: 'America/New_York' });
@@ -35,7 +35,10 @@ function updateTime() {
   document.getElementById('eastern-time').textContent = easternTime.toLocaleTimeString();
   document.getElementById('eastern-date').textContent = easternTime.toLocaleDateString();
   document.getElementById('eastern-zone').textContent = (easternOffset === -4) ? '-4 GMT' : '-5 GMT';
-  document.getElementById('eastern-weekday').textContent = weekdays[easternTime.getDay()]; // Display weekday
+  document.getElementById('eastern-weekday').textContent = weekdays[easternTime.getDay()]; // Weekday for Eastern
+
+  // Update the "Weekday Section" to show the current weekday based on selected timezone (e.g., Manila)
+  document.getElementById('weekday').textContent = weekdays[manilaTime.getDay()]; // You can switch to Mountain or Eastern if needed
 
   // Hide loading spinner after time is fetched
   document.getElementById('manila-card-body').classList.remove('loading');
