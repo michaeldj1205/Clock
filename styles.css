@@ -1,0 +1,152 @@
+/* General Styles */
+body {
+  background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+  font-family: 'Roboto', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 20px;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background: #121212;
+  color: #f5f7fa;
+}
+
+/* Elegant Card Design */
+.elegant-card {
+  border: none;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.elegant-card.dark-mode {
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.elegant-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.card-title.dark-mode {
+  color: #fff;
+}
+
+/* Time Text */
+.time-text {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.time-text.dark-mode {
+  color: #f5f7fa;
+}
+
+.card-body {
+  text-align: center;
+  transition: opacity 0.3s ease;
+}
+
+.card-body.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Time Zone Labels */
+.time-zone {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #6c757d;
+  margin-top: 0.5rem;
+  opacity: 0.8;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.time-zone.dark-mode {
+  color: #bbb;
+}
+
+.time-zone:hover {
+  color: #2575fc;
+  text-decoration: underline;
+}
+
+/* Spinner Styles */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.3rem;
+  color: #2575fc;
+  animation: spin 1s linear infinite;
+}
+
+/* Button Styles */
+button {
+  border-radius: 25px;
+  font-weight: bold;
+  padding: 10px 20px;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #2575fc;
+  transform: scale(1.05);
+}
+
+button:focus {
+  outline: none;
+}
+
+/* Fullscreen Button */
+button#fullscreen {
+  background-color: #28a745;
+  color: white;
+}
+
+button#fullscreen:hover {
+  background-color: #218838;
+}
+
+/* Dark Mode Toggle Button */
+button#toggle-dark-mode {
+  background-color: #343a40;
+  color: white;
+}
+
+button#toggle-dark-mode:hover {
+  background-color: #23272b;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .display-4 {
+    font-size: 2.5rem;
+  }
+  .display-6 {
+    font-size: 1.5rem;
+  }
+  .elegant-card {
+    padding: 1rem;
+  }
+}
