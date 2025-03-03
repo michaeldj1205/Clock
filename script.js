@@ -72,3 +72,25 @@ document.getElementById('fullscreen').addEventListener('click', () => {
     document.exitFullscreen();
   }
 });
+
+// Function to open the calendar
+function openCalendar() {
+  const isMobile = /iPhone|iPad|Android/i.test(navigator.userAgent);
+  
+  if (isMobile) {
+    // Open the calendar app on mobile (This works for some mobile browsers)
+    window.open("calshow:", "_blank");
+  } else {
+    // Open Windows system calendar (for Windows users)
+    window.location.href = "explorer.exe shell:::{E2E7934B-DCE5-43C4-9576-7FE4F75E7480}";
+    
+    // Alternative: Open Google Calendar in a new tab for cross-platform support
+    setTimeout(() => {
+      window.open("https://calendar.google.com", "_blank");
+    }, 500);
+  }
+}
+
+// Add event listener to the calendar button
+document.getElementById("open-calendar").addEventListener("click", openCalendar);
+
