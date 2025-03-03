@@ -167,6 +167,16 @@ button#toggle-dark-mode:hover {
   display: block;              /* Makes the image block-level */
 }
 
+button#open-calendar {
+  background-color: #007bff;
+  color: white;
+}
+
+button#open-calendar:hover {
+  background-color: #0056b3;
+}
+
+
 /* Optional: Add a hover effect for banner logo */
 #banner-logo img:hover {
   opacity: 0.8;                /* Slight fade effect when hovering */
